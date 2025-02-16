@@ -8,6 +8,6 @@ export const chatModel = new ChatOpenAI({
 });
 
 export const llama3 = new Ollama({
-	model: "llama3",
+	model: "qwen2",
 	temperature: 0.3,
 })

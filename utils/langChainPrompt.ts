@@ -15,12 +15,20 @@ Adapt Cultural and Genre-Specific Terms Thoughtfully:
 Translate genre-specific terminology (e.g., "Qi," "Dao," "Sect") into accessible terms, but include original terms in parentheses where fans might appreciate them. For instance: "spiritual energy (Qi)" or "way of enlightenment (Dao)."
 Ensure Consistent Terminology: Use consistent translations for recurring terms, names, or titles throughout the text. Establish a glossary if needed to maintain clarity.
 `
-const shortPrompt = "You are a skilled translator specializing in Chinese light novels (ranobe). Your task is to translate Chinese ranobe text into natural, fluent English while preserving the tone, style, and immersive experience of the original story. Please only translate without additional comments or remarks";
+const shortPrompt = "You are a skilled translator specializing in Chinese light novels (ranobe). Your task is to translate Chinese ranobe text into natural, fluent English while preserving the tone, style, and immersive experience of the original story. Please only translate without additional comments or remarks or thinking process";
 export const langChainPrompt = ChatPromptTemplate.fromMessages([
 	[
 		"system",
 		longPrompt
 	],
 	// new MessagesPlaceholder("history"),
+	["user", "{input}"],
+])
+
+export const langShortChainPrompt = ChatPromptTemplate.fromMessages([
+	[
+		"system",
+		shortPrompt
+	],
 	["user", "{input}"],
 ])

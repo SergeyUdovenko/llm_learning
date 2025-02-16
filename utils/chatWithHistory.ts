@@ -1,8 +1,8 @@
 import { ChatMessageHistory } from "@langchain/community/stores/message/in_memory";
-import { RunnableWithMessageHistory } from "@langchain/core/runnables";
-import { langChainPrompt } from "./langChainPrompt";
-import { chatModel, llama3 } from "./chatModel";
 import { StringOutputParser } from "@langchain/core/output_parsers";
+import { RunnableWithMessageHistory } from "@langchain/core/runnables";
+import { chatModel } from "./chatModel";
+import { langChainPrompt } from "./langChainPrompt";
 
 
 const messageHistory = new ChatMessageHistory()
